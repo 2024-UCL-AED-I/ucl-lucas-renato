@@ -12,3 +12,18 @@ D:\Workspace\Projeto\GerenciadorDeTarefas\GerenciadorDeTarefas\GerenciadorDeTare
 D:\Workspace\Projeto\GerenciadorDeTarefas\GerenciadorDeTarefas\GerenciadorDeTarefas\obj\Debug\net8.0\GerenciadorDeTarefas.pdb
 D:\Workspace\Projeto\GerenciadorDeTarefas\GerenciadorDeTarefas\GerenciadorDeTarefas\obj\Debug\net8.0\GerenciadorDeTarefas.genruntimeconfig.cache
 D:\Workspace\Projeto\GerenciadorDeTarefas\GerenciadorDeTarefas\GerenciadorDeTarefas\obj\Debug\net8.0\ref\GerenciadorDeTarefas.dll
+D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\obj\Debug\net8.0\GerenciadorDeTarefas.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\obj\Debug\net8.0\GerenciadorDeTarefas.AssemblyInfoInputs.cache
+D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\obj\Debug\net8.0\GerenciadorDeTarefas.AssemblyInfo.cs
+D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\obj\Debug\net8.0\GerenciadorDeTarefas.csproj.CoreCompileInputs.cache
+D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\obj\Debug\net8.0\GerenciadorDeTarefas.sourcelink.json
+D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\obj\Debug\net8.0\GerenciadorDeTarefas.dll
+D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\obj\Debug\net8.0\refint\GerenciadorDeTarefas.dll
+D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\obj\Debug\net8.0\GerenciadorDeTarefas.pdb
+D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\bin\Debug\net8.0\GerenciadorDeTarefas.exe
+D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\bin\Debug\net8.0\GerenciadorDeTarefas.deps.json
+D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\bin\Debug\net8.0\GerenciadorDeTarefas.runtimeconfig.json
+D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\bin\Debug\net8.0\GerenciadorDeTarefas.dll
+D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\bin\Debug\net8.0\GerenciadorDeTarefas.pdb
+D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\obj\Debug\net8.0\GerenciadorDeTarefas.genruntimeconfig.cache
+D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\obj\Debug\net8.0\ref\GerenciadorDeTarefas.dll

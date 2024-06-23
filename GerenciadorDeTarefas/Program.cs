@@ -1,15 +1,16 @@
 ﻿using GerenciadorDeTarefas.Services;
+using GerenciadorDeTarefas.Modelo;
+using GerenciadorDeTarefas.Modelo.Entidade;
 using System;
 
-namespace GerenciadorDeTarefas
+namespace GerenciadorDeTarefas;
+
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            MenuService menuService = new MenuService();
-            menuService.DisplayMenu();
-        }
+        Menu menu = new Menu();
+        menu.MenuPrincipal();
     }
 }
 

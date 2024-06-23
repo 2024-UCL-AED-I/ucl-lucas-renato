@@ -1,32 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System.IO;
+using System.Text.Json;
 using GerenciadorDeTarefas.Modelo.Entidade;
 using System;
-using System.Collections.Generic;
+
+
 
 namespace GerenciadorDeTarefas.Services
 {
-    public class MenuService
+    public class Menu
     {
         private List<Tarefa> tarefas;
         private List<Pessoa> pessoas;
+        private const string ArquivoTarefas = "tarefas.txt";
+        private const string ArquivoPessoas = "Pessoas.txt";
 
-        public MenuService()
+        public Menu()
         {
             tarefas = new List<Tarefa>();
             pessoas = new List<Pessoa>();
         }
 
-        public void DisplayMenu()
+        public void MenuPrincipal()
         {
             bool sair = false;
 
             while (!sair)
             {
+                Console.WriteLine("=================================");
+                Console.WriteLine("=------Gerenciando Tarefas------=");
+                Console.WriteLine("=================================");
                 Console.WriteLine("1. Adicionar Tarefa");
                 Console.WriteLine("2. Remover Tarefa");
                 Console.WriteLine("3. Listar Tarefas");

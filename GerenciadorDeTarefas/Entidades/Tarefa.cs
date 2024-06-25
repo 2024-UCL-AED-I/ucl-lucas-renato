@@ -12,9 +12,9 @@ public class Tarefa
 {
     public string Titulo { get; set; }
     public DateTime CriadoEm { get; private set; }
-    public Pessoa Responsavel { get; set; }
+    public string Responsavel { get; set; }
 
-    public Tarefa(string titulo, Pessoa responsavel)
+    public Tarefa(string titulo, string responsavel)
     {
         Titulo = titulo;
         CriadoEm = DateTime.Now;
@@ -23,6 +23,6 @@ public class Tarefa
 
     public override string ToString()
     {
-        return $"Tarefa: {Titulo}, Criado em: {CriadoEm}, Responsável: {Responsavel.Nome}";
+        return $"Tarefa: {Titulo}, Criado em: {CriadoEm}, Responsável: {Responsavel}";
     }
 }

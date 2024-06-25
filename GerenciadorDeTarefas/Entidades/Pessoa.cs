@@ -19,7 +19,14 @@ public class Pessoa
 
     public override string ToString()
     {
-        return $"Nome: {Nome}, Email: {Email}";
+        return $"{this.Nome},{this.Email}";
+    }
+    public string Adicionar(string nome, string email)
+    {
+        this.Nome = nome;
+        this.Email = email;
+
+        return $"{this.Nome}, {this.Email}";
     }
 }
 

@@ -95,17 +95,34 @@ namespace GerenciadorDeTarefas.Services
             Console.Write("Responsável (Nome do Responsável): ");
             string nomeResponsavel = Console.ReadLine();
 
-            var responsavel = pessoas.Find(p => p.Nome == nomeResponsavel);
+            string[] linhasPessoas = File.ReadAllLines(@"D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\Arquivos\Pessoas.txt", Encoding.UTF8);
 
-            if (responsavel == null)
+            bool pessoaEncontrada = false;
+
+            foreach (string linha in linhasPessoas)
+            {
+                if (linha.Contains(nomeResponsavel))
+                {
+                    pessoaEncontrada = true;
+                    break;
+                }
+            }
+
+            if (!pessoaEncontrada)
             {
                 ImprimeMensagemComConfirmacao("Pessoa não encontrada. Tarefa não adicionada.");
                 return;
             }
 
-            Tarefa tarefa = new Tarefa(titulo, responsavel);
+
+            Tarefa tarefa = new Tarefa(titulo, nomeResponsavel);
 
             tarefas.Add(tarefa);
+
+            using (StreamWriter sw = new StreamWriter(@"D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\Arquivos\Tarefas.txt", true, Encoding.UTF8))
+            {
+                sw.WriteLine($"Título: {titulo}, Responsável: {nomeResponsavel}");
+            }
 
             ImprimeMensagemComConfirmacao("Tarefa adicionada com sucesso");
         }
@@ -130,11 +147,16 @@ namespace GerenciadorDeTarefas.Services
 
         private void ListarTarefas()
         {
-            foreach (var tarefa in tarefas)
+            using (FileStream arquivoTarefa = new FileStream(@"D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\Arquivos\Tarefas.txt", FileMode.Open, FileAccess.Read))
+            using (StreamReader sr = new StreamReader(arquivoTarefa, Encoding.UTF8))
             {
-                Console.WriteLine(tarefa);
-                ImprimeMensagemComConfirmacao("Clique em qualquer tecla para continuar.");
+                while (!sr.EndOfStream)
+                {
+                    string leitor = sr.ReadLine();
+                    Console.WriteLine(leitor);
+                }
             }
+            ImprimeMensagemComConfirmacao("Clique em qualquer tecla para continuar.");
         }
 
         private void AdicionarPessoa()
@@ -152,7 +174,7 @@ namespace GerenciadorDeTarefas.Services
 
             pessoas.Add(pessoa);
 
-            sw.WriteLine(pessoa);
+            sw.WriteLine(pessoa.Adicionar(pessoa.Nome, pessoa.Email));
             sw.Close();
             arquivoPessoa.Close();
 

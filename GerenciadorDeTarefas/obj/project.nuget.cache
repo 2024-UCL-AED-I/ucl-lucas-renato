@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jqhjlUHaVvZJSIHzeDRxwWA621dsmqHbzSwmriJxw9hKVBDbLutEaAgbKwMPVhTrjE4J0f1Qw/hsv3QfdQnKvg==",
+  "dgSpecHash": "Et/TxxDRv/bjb9PLdEGeFwql3RiyEvi4feRf6xgUTLjI3jq25kB9mjBDWCu5sS0q7PY/z0maU65sSKI4jHNEow==",
   "success": true,
   "projectFilePath": "D:\\Git Projeto\\ucl-lucas-renato\\GerenciadorDeTarefas\\GerenciadorDeTarefas.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\LUCAS LIMA\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

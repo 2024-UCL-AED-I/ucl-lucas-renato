@@ -27,3 +27,6 @@ D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\bin\Debug\net8.0\Gerenciado
 D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\bin\Debug\net8.0\GerenciadorDeTarefas.pdb
 D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\obj\Debug\net8.0\GerenciadorDeTarefas.genruntimeconfig.cache
 D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\obj\Debug\net8.0\ref\GerenciadorDeTarefas.dll
+D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\obj\Debug\net8.0\GerenciadorDeTarefas.csproj.AssemblyReference.cache
+D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\obj\Debug\net8.0\Gerencia.0F884520.Up2Date

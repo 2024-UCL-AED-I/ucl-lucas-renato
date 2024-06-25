@@ -1,8 +1,10 @@
-﻿using System;
+﻿
+using System;
 using System.IO;
-using System.Text.Json;
+using System.Text;
 using GerenciadorDeTarefas.Modelo.Entidade;
 using System;
+using System.Xml;
 
 
 
@@ -12,8 +14,11 @@ namespace GerenciadorDeTarefas.Services
     {
         private List<Tarefa> tarefas;
         private List<Pessoa> pessoas;
-        private const string ArquivoTarefas = "tarefas.txt";
-        private const string ArquivoPessoas = "Pessoas.txt";
+
+        string arquivoTarefas = @"D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\Arquivos\Tarefas.txt";
+        string arquivoPessoas = @"D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\Arquivos\Pessoas.txt";
+        private string ArquivoTarefas = "Tarefas.txt";
+        private string ArquivoPessoas = "Pessoas.txt";
 
         public Menu()
         {
@@ -27,6 +32,7 @@ namespace GerenciadorDeTarefas.Services
 
             while (!sair)
             {
+                Console.Clear();
                 Console.WriteLine("=================================");
                 Console.WriteLine("=------Gerenciando Tarefas------=");
                 Console.WriteLine("=================================");
@@ -67,8 +73,22 @@ namespace GerenciadorDeTarefas.Services
             }
         }
 
+        static void CarregarPessoas()
+        {
+            
+            using (FileStream arquivoPessoa = new FileStream(@"D:\Git Projeto\ucl-lucas-renato\GerenciadorDeTarefas\Arquivos\Pessoas.txt", FileMode.Open, FileAccess.Read))
+            using (StreamReader sr = new StreamReader(arquivoPessoa, Encoding.UTF8))
+            {
+                while (!sr.EndOfStream)
+                {
+                    string leitor = sr.ReadLine();
+                    Console.WriteLine(leitor);
+                }
+            }
+        }
         private void AdicionarTarefa()
         {
+
             Console.Write("Título da Tarefa: ");
             string titulo = Console.ReadLine();
 
@@ -79,13 +99,15 @@ namespace GerenciadorDeTarefas.Services
 
             if (responsavel == null)
             {
-                Console.WriteLine("Pessoa não encontrada. Tarefa não adicionada.");
+                ImprimeMensagemComConfirmacao("Pessoa não encontrada. Tarefa não adicionada.");
                 return;
             }
 
             Tarefa tarefa = new Tarefa(titulo, responsavel);
+
             tarefas.Add(tarefa);
-            Console.WriteLine("Tarefa adicionada com sucesso.");
+
+            ImprimeMensagemComConfirmacao("Tarefa adicionada com sucesso");
         }
 
         private void RemoverTarefa()
@@ -98,11 +120,11 @@ namespace GerenciadorDeTarefas.Services
             if (tarefa != null)
             {
                 tarefas.Remove(tarefa);
-                Console.WriteLine("Tarefa removida com sucesso.");
+                ImprimeMensagemComConfirmacao("Tarefa removida com sucesso");
             }
             else
             {
-                Console.WriteLine("Tarefa não encontrada.");
+                ImprimeMensagemComConfirmacao("Tarefa não encontrada");
             }
         }
 
@@ -111,6 +133,7 @@ namespace GerenciadorDeTarefas.Services
             foreach (var tarefa in tarefas)
             {
                 Console.WriteLine(tarefa);
+                ImprimeMensagemComConfirmacao("Clique em qualquer tecla para continuar.");
             }
         }
 
@@ -122,18 +145,37 @@ namespace GerenciadorDeTarefas.Services
             string email = Console.ReadLine();
 
             Pessoa pessoa = new Pessoa(nome, email);
+
+            FileStream arquivoPessoa = new FileStream(arquivoPessoas, FileMode.Append, FileAccess.Write);
+
+            StreamWriter sw = new StreamWriter(arquivoPessoa, Encoding.UTF8);
+
             pessoas.Add(pessoa);
 
-            Console.WriteLine("Pessoa adicionada com sucesso.");
+            sw.WriteLine(pessoa);
+            sw.Close();
+            arquivoPessoa.Close();
+
+            ImprimeMensagemComConfirmacao("Pessoa adicionada com sucesso");
         }
 
         private void ListarPessoas()
         {
-            foreach (var pessoa in pessoas)
-            {
-                Console.WriteLine(pessoa);
-            }
+            CarregarPessoas();
+            ImprimeMensagemComConfirmacao("Clique em qualquer tecla para continuar.");
+        }
+
+
+        private void ImprimeMensagemComConfirmacao(string mensagem)
+        {
+            Console.WriteLine($"{mensagem}. Pressione qualquer tecla para continuar");
+            Console.ReadKey();
         }
     }
 }
+
+
+
+
+
 
